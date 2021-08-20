@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # see all lists lists
   # details of given list lists/42
   # create new list get lists/new post lists
-  resources :lists, only: %i[index show new create] do
+  root to: 'lists#index'
+  resources :lists, only: %i[show new create] do
 
     resources :bookmarks, only: %i[new create]
   end
